@@ -27,3 +27,8 @@ runs/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Large datasets and reference files
+*.ndjson
+coco2017.ndjson
+research paper/
