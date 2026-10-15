@@ -1,9 +1,13 @@
+import streamlit as st
 from ultralytics import YOLO
 
-_model = YOLO("yolo11s.pt")
+@st.cache_resource
+def load_model():
+    return YOLO("yolo11s.pt")
 
 def detect(image):
-    results = _model(image, verbose=False)
+    model = load_model()
+    results = model(image, verbose=False)
     detections = []
 
     for result in results:
